@@ -1,7 +1,11 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "bento/centos-7.1"
+  config.vm.box = "bento/centos-7.4"
 
   config.vm.provision :shell, path: './provision.sh'
+
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 1600
+  end
 
   (1..3).each do |i|
     # provision

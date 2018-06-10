@@ -24,3 +24,8 @@ systemctl enable docker
 
 # allow vagrant docker privileges
 usermod -aG docker vagrant
+
+# copy ssh key
+mkdir -p /root/.ssh
+cp /vagrant/id_rsa.pub /root/.ssh/authorized_keys
+chmod 600 /root/.ssh/authorized_keys
