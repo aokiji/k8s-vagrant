@@ -40,6 +40,12 @@ ansible_user=root
 flannel_interface_regexp=192.168.33.*
 ```
 
+And to allow swap on nodes by adding the following line to k8s-cluster.yml
+
+```yaml
+kubelet_fail_swap_on: false
+```
+
 Deploy kubespray
 
 ```
